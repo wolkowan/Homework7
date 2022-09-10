@@ -7,18 +7,18 @@ namespace Seminar7
         static void Main(string[] args)
         {
 
-
             Console.WriteLine($"\nInput Task№\t");
             int task = Convert.ToInt32(Console.ReadLine());
             switch (task)
             {
                 case 0: return;
                 case 47:
-                    // Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+                    System.Console.WriteLine("Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.");
                     // m = 3, n = 4.
                     // 0,5 7 -2 -0,2
                     // 1 -3,3 8 -9,9
                     // 8 7,8 -7,1 9
+                    System.Console.WriteLine();
                     Console.WriteLine("Введите количество строк массива.");
                     int rows = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Введите количество столбцов массива.");
@@ -27,8 +27,8 @@ namespace Seminar7
                     break;
 
                 case 50:
-                    // Задача 50. Напишите программу, которая на вход принимает позиции элемента 
-                    //в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+                    System.Console.WriteLine("Задача 50. Напишите программу, которая на вход принимает позиции элемента4\n в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.");
+                    System.Console.WriteLine();
                     // Например, задан массив:
                     // 1 4 7 2
                     // 5 9 2 3
@@ -38,30 +38,30 @@ namespace Seminar7
                     Console.WriteLine("Введите количество столбцов массива.");
                     int columns1 = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine("Введите номер столбца искомого элемента");
-                    int num1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Введите номер строки искомого элемента");
+                    int num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите номер столбца искомого элемента");
                     int num2 = Convert.ToInt32(Console.ReadLine());
 
                     FoundPositionOfNumber(rows1, columns1, num1, num2);
                     break;
 
                 case 51:  //задача 50 при условии что нужно найти элемент в массиве
+                    System.Console.WriteLine("Вариация задания 50. Пример: задан массив:\n1 4 7 2\n5 9 2 3\n8 4 2 4\n17 -> такого числа в массиве нет");
 
-                Console.WriteLine("Введите количество строк массива.");
-                int rows2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Введите количество столбцов массива.");
-                int columns2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите количество строк массива.");
+                    int rows2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите количество столбцов массива.");
+                    int columns2 = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Введите значение искомого элемента");
-                int num3 = Convert.ToInt32(Console.ReadLine());
-                FoundNumber(rows2, columns2, num3);
-
-                break;
-
+                    Console.WriteLine("Введите значение искомого элемента");
+                    int num3 = Convert.ToInt32(Console.ReadLine());
+                    FoundNumber(rows2, columns2, num3);
+                    break;
 
                 case 52:
-                    // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+                    System.Console.WriteLine("Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.");
+                    System.Console.WriteLine();
                     // Например, задан массив:
                     // 1 4 7 2
                     // 5 9 2 3
@@ -75,17 +75,8 @@ namespace Seminar7
                     break;
 
                 default: System.Console.WriteLine("error"); break;
-
-
             }
-
-            // Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-            // m = 3, n = 4.
-            // 0,5 7 -2 -0,2
-            // 1 -3,3 8 -9,9
-            // 8 7,8 -7,1 9
-
-
+ 
             double[,] GetArrayRandom(int rows, int columns)
             {
                 double[,] array = new double[rows, columns];
@@ -103,19 +94,12 @@ namespace Seminar7
                 return array;
             }
 
-            // Задача 50. Напишите программу, которая на вход принимает позиции элемента 
-            //в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
-            // Например, задан массив:
-            // 1 4 7 2
-            // 5 9 2 3
-            // 8 4 2 4
-            // 17 -> такого числа в массиве нет
             void FoundPositionOfNumber(int rows, int columns, int num1, int num2)
             {
                 int[,] array = new int[rows, columns];
 
 
-                Console.WriteLine($"\n массив случайных чисел размером {rows}x{columns}:\n");
+                Console.WriteLine($"\n Mассив случайных чисел размером {rows}x{columns}:\n");
 
                 for (int i = 0; i < rows; i++)
                 {
@@ -127,8 +111,6 @@ namespace Seminar7
                     }
                     Console.WriteLine();
                 }
-
-
 
                 if (num1 > rows || num2 > columns)
                     System.Console.WriteLine("такого элемента нет");
@@ -141,7 +123,7 @@ namespace Seminar7
                 int[,] array = new int[rows, columns];
 
 
-                Console.WriteLine($"\n массив случайных чисел размером {rows}x{columns}:\n");
+                Console.WriteLine($"\n Mассив случайных чисел размером {rows}x{columns}:\n");
 
                 for (int i = 0; i < rows; i++)
                 {
@@ -154,26 +136,28 @@ namespace Seminar7
                     Console.WriteLine();
 
                 }
+                string ifNumInArray = string.Empty;
 
                 for (int i = 0; i < rows; i++)
                 {
                     for (int j = 0; j < columns; j++)
                     {
                         if (array[i, j] == num)
-                            Console.WriteLine($"Элемент со значением {num} находится на позиции [{i + 1},{j + 1}]");
-
+                        {
+                        ifNumInArray = "+";
+                        Console.WriteLine($"Элемент со значением {num} находится на позиции [{i + 1},{j + 1}]");
+                        }
                     }
-                    System.Console.WriteLine("Элемента с таким значением в массиве нет");///перенести строку!!!!!!!!!!!!!!!!!!!!!!
                 }
+                if (ifNumInArray == string.Empty) System.Console.WriteLine("Элемента с таким значением в массиве нет");
             }
-
 
             void GetMean(int rows, int columns)
             {
                 int[,] array = new int[rows, columns];
 
                 double[] resultArrey = new double[columns];
-                Console.WriteLine($"\n массив случайных чисел размером {rows}x{columns}:\n");
+                Console.WriteLine($"\n Mассив случайных чисел размером {rows}x{columns}:\n");
 
                 for (int i = 0; i < rows; i++)
                 {
@@ -189,10 +173,9 @@ namespace Seminar7
                 Console.WriteLine();
                 for (int j = 0; j < columns; j++)
                 {
-                    Console.WriteLine(String.Join(", ", resultArrey[j] / rows));//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    Console.Write($"{resultArrey[j] / rows:f2}   ");
                 }
             }
-
         }
     }
 }
